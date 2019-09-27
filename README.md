@@ -39,7 +39,7 @@ Open the file `dist/index.html` in your browser
 
 ## To-Do
 
-- [ ] Add simple check for results. If none, then offer appropriate feedback.
+- [x] Add simple check for results. If none, then offer appropriate feedback.
 - [ ] Publish to Heroku
 - [ ] Add paginated results (right now just showing first 30, on first page)
 - [ ] Add simple field validation for empty field.
