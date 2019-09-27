@@ -1,0 +1,137 @@
+:root {
+	--c-black: 0, 0%, 0%;
+	--c-white: 0, 0%, 100%;
+
+	--c-blue: 208, 100%, 43%;
+	--c-navy: 210, 100%, 12%;
+	--c-red: 3, 100%, 61%;
+	--c-yellow: 52, 100%, 50%;
+
+	--c-links: var(--c-blue);
+	--c-links-interactive: var(--c-navy);
+
+	--ff-sans-serif: -system-ui,-apple-system,BlinkMacSystemFont,segoe ui,Roboto,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+}
+
+html {
+	font-size: 62.5%; /* font-size 1em = 10px on default browser settings */
+}
+
+body {
+	color: hsl(var(--c-black));
+	background-color: hsl(var(--c-white));
+	font-family: var(--ff-sans-serif);
+	font-size: 1.6rem;
+}
+
+a {
+	color: hsl(var(--c-links));
+}
+
+a:focus,
+a:hover {
+	color: hsl(var(--c-links-interactive));
+}
+
+.app {
+	margin: 5rem auto;
+	max-width: 540px;
+	text-align: center;
+}
+
+// Loading icon.
+.loader {
+	display: inline-block;
+	height: 64px;
+	left: calc(50% - 32px);
+	position: absolute;
+	width: 64px;
+	z-index: 1;
+}
+
+.loader::after,
+.loader::before {
+	animation: loader 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+	border: 4px solid hsl(var(--c-white));
+	border-radius: 50%;
+	content: "";
+	opacity: 1;
+	position: absolute;
+}
+
+.loader::after {
+	animation-delay: -0.5s;
+}
+
+@keyframes loader {
+	0% {
+		height: 0;
+		left: 28px;
+		top: 28px;
+		width: 0;
+		opacity: 1;
+	}
+	100% {
+		height: 58px;
+		left: -1px;
+		opacity: 0;
+		top: -1px;
+		width: 58px;
+	}
+}
+
+
+.search-form {
+	width: 100%;
+}
+
+.search-form__input {
+	border: 1px solid hsl(var(--c-yellow));
+	border-right: none;
+	font-size: 1.8rem;
+	outline: none;
+	padding: calc(1rem - 1px) 1rem;
+	width: 60%;
+}
+
+.search-form__input:focus {
+	border-color: hsl(var(--c-navy));
+}
+
+.search-form__input:focus + [type="submit"] {
+	background-color: hsl(var(--c-navy));
+	color: hsl(var(--c-white));
+}
+
+.search-form__submit {
+	-webkit-appearance: none;
+
+	background-color: hsl(var(--c-yellow));
+	border: none;
+	color: hsl(var(--c-black));
+	font-size: 1.8rem;
+	padding: 1rem;
+	width: 30%;
+}
+
+.search-form__submit:focus,
+.search-form__submit:hover {
+	background-color: hsl(var(--c-navy));
+	color: hsl(var(--c-white));
+}
+
+.artist {
+	display: inline-block;
+	padding: 0.75rem;
+}
+
+.feedback {
+	font-size: 1.8rem;
+	font-weight: 700;
+	padding: 1rem;
+}
+
+.feedback--error {
+	background-color: hsla(var(--c-red), 0.1);
+	color: hsl(var(--c-red));
+}
